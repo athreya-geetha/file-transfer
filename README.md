@@ -2,8 +2,6 @@
 
 The goal of this project is to transfer a file from a server to a client using Java Socket Streams. The server first authenticates the client, searches for the requested file and sends it to the client, if it is available. The contents of the file are encrypted for a secure transfer of the file. A check is performed to verify that the client has received the file correctly, i.e. its contents are same as that on the server. The detailed design is explained below.
 
-## Detailed Design
-
 ### File Transfer Server
 
 The server is implemented using the Socket abstraction and Listener-Worker design for multi- threaded server. By using the Listener-Worker design, the server can accept multiple concurrent requests at the same time. When the server is started, it simple creates the Listener thread and executes it. The server also has a map of all clients that are currently registered with the server. This can be used for authenticating the clients to the server for multiple sessions.
